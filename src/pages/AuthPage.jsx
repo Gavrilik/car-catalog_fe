@@ -1,21 +1,41 @@
 import React, { useState } from "react";
 import { useHttp } from "../hooks/http.hooks";
 
-export const AuthPage = () => {
-  const { loading, error, request } = useHttp();
-  const [form, setForm] = useState({
+/*export const AuthPage = () => {
+  const { loading, request } = useHttp();
+  const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
   });
 
+  const [registerForm, setRegisterForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+    rolesId: "1",
+  });
+
   const changeHandler = (event) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
+    setLoginForm({ ...loginForm, [event.target.name]: event.target.value });
+    setRegisterForm({
+      ...registerForm,
+      [event.target.name]: event.target.value,
+    });
   };
 
   const registerHandler = async () => {
     try {
-      const data = await request("/auth/registration", "POST", { ...form });
-      console.log("data", data);
+      await request("/auth/registration", "POST", {
+        ...registerForm,
+      });
+    } catch (e) {}
+  };
+
+  const loginHandler = async () => {
+    console.log("abc",loginForm);
+    try {
+      await request("/auth/login", "POST", { ...loginForm });
     } catch (e) {}
   };
 
@@ -55,6 +75,7 @@ export const AuthPage = () => {
             <button
               className="btn yellow darken-4"
               style={{ marginRight: 10 }}
+              onClick={loginHandler}
               disabled={loading}
             >
               Войти
@@ -72,3 +93,5 @@ export const AuthPage = () => {
     </div>
   );
 };
+*/
+ 

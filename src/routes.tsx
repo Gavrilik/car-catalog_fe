@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { AuthPage } from "./pages/AuthPage";
+//import { AuthPage } from "./pages/AuthPage";
 import { ShoppingBasket } from "./pages/ShoppingBasket";
 import { CatalogPage } from "./pages/CatalogPage";
 import { CatalogIdPage } from "./pages/CatalogIdPage";
@@ -22,7 +22,7 @@ export const useRoutes = (isAuthenticated: boolean) => {
   return (
     <Routes>
       <Route>
-        <Route path="*" element={<AuthPage />}></Route>
+        <Route></Route>
       </Route>
     </Routes>
   );

@@ -1,15 +1,13 @@
-import React from "react";
+import { FC } from "react";
 import "materialize-css";
-import { BrowserRouter } from "react-router-dom";
-import { useRoutes } from "./routes";
+import LoginForm from "./components/LoginForm";
 
-function App() {
-  const routes = useRoutes(false);
+const App: FC = () => {
   return (
-    <BrowserRouter>
-      <div className="container">{routes}</div>
-    </BrowserRouter>
+    <div>
+      <LoginForm />
+    </div>
   );
-}
+};
 
 export default App;
