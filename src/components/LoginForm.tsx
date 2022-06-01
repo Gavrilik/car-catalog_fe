@@ -7,24 +7,44 @@ const LoginForm: FC = () => {
   const { store } = useContext(Context);
 
   return (
-    <div>
-      <input
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-        type="text"
-        placeholder="Email"
-      />
+    <div className="flex">
+      <div className="flex"></div>
+      <h1>Каталог</h1>
+      <div className="col s12 m6">
+        <div className="card grey darken-1">
+          <div className="card-content white-text">
+            <span className="card-title">Авторизация</span>
+            <div>
+              <div className="input-field">
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  type="text"
+                  placeholder="Email"
+                />
+              </div>
 
-      <input
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-        type="password"
-        placeholder="Password"
-      />
-      <button onClick={() => store.login(email, password)}>Вход</button>
-      <button onClick={() => store.registration(email, password)}>
-        Регистрация
-      </button>
+              <div className="input-field">
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  type="password"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+            <div className="card-action">
+              <button
+                className="btn yellow darken-4"
+                style={{ marginRight: 10 }}
+                onClick={() => store.login(email, password)}
+              >
+                Вход
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
