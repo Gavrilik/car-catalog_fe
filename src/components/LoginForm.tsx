@@ -1,5 +1,7 @@
+import { observer } from "mobx-react-lite";
 import { FC, useContext, useState } from "react";
 import { Context } from "..";
+import { AuthPage } from "../pages/AuthPage";
 
 const LoginForm: FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -41,6 +43,7 @@ const LoginForm: FC = () => {
               >
                 Вход
               </button>
+              <AuthPage />
             </div>
           </div>
         </div>
@@ -49,4 +52,4 @@ const LoginForm: FC = () => {
   );
 };
 
-export default LoginForm;
+export default observer(LoginForm);
